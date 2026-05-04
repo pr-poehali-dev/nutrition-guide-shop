@@ -8,7 +8,7 @@ const GUIDES_IMG = "https://cdn.poehali.dev/projects/33d0f9d3-ec3c-42c4-8091-bcf
 const navLinks = [
   { href: "#about", label: "О специалисте" },
   { href: "#guides", label: "Гайды" },
-  { href: "#courses", label: "Курсы" },
+  { href: "#courses", label: "Программы" },
   { href: "#calculator", label: "Калькулятор" },
   { href: "#reviews", label: "Отзывы" },
   { href: "#blog", label: "Блог" },
@@ -22,10 +22,10 @@ const guides = [
   { title: "Питание при ПМС", desc: "Нутриционный план для стабилизации цикла и улучшения самочувствия.", price: "990 ₽", tag: "" },
 ];
 
-const courses = [
-  { title: "Основы нутрициологии", desc: "Полный базовый курс: макро- и микронутриенты, составление рациона, работа с дефицитами.", price: "7 900 ₽", duration: "4 недели", lessons: 16 },
-  { title: "Похудение без диет", desc: "Научный подход к снижению веса: дефицит калорий, психология питания, устойчивый результат.", price: "12 900 ₽", duration: "6 недель", lessons: 24 },
-  { title: "Женское здоровье и питание", desc: "Питание в разные фазы цикла, беременность, менопауза — полное руководство.", price: "15 900 ₽", duration: "8 недель", lessons: 32 },
+const programs = [
+  { title: "Мини-детокс", desc: "Мягкое очищение без голодания. Перезапустите организм, уберите отёки и верните лёгкость — шаг за шагом, самостоятельно.", price: "2 990 ₽", duration: "4 недели", icon: "Sparkles" },
+  { title: "Чистая кожа", desc: "Питание для сияющей кожи изнутри. Убираем воспаления, высыпания и тусклость через рацион, а не уходовую косметику.", price: "2 099 ₽", duration: "4 недели", icon: "Sun" },
+  { title: "Буст энергии", desc: "Избавьтесь от хронической усталости и упадка сил. Программа восстанавливает ресурс тела через еду, режим и нутриенты.", price: "3 099 ₽", duration: "6 недель", icon: "Zap" },
 ];
 
 const reviews = [
@@ -257,38 +257,36 @@ export default function Index() {
         </div>
       </section>
 
-      {/* COURSES */}
+      {/* PROGRAMS */}
       <section id="courses" className="py-24 px-6 md:px-12" style={{ backgroundColor: "var(--cream-deep)" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <span className="text-xs tracking-[0.25em] uppercase font-medium mb-4 block" style={{ color: "var(--sage)" }}>Курсы</span>
+            <span className="text-xs tracking-[0.25em] uppercase font-medium mb-4 block" style={{ color: "var(--sage)" }}>Программы</span>
             <h2 className="font-cormorant text-5xl md:text-6xl font-light" style={{ color: "var(--warm-dark)" }}>
-              Обучение в глубину
+              Для самостоятельного<br /><em className="italic">прохождения</em>
             </h2>
+            <p className="font-golos text-sm mt-4 max-w-md mx-auto" style={{ color: "#7a8a72" }}>
+              Чёткий план, пошаговые инструкции и поддержка на каждом этапе — без созвонов и привязки к расписанию
+            </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {courses.map((c, i) => (
-              <div key={c.title} className={`rounded-2xl overflow-hidden hover-lift cursor-pointer ${i === 1 ? "lg:scale-105 lg:-mt-4 lg:mb-4" : ""}`} style={{ backgroundColor: i === 1 ? "var(--sage-dark)" : "white", border: i === 1 ? "none" : "1px solid rgba(90,135,90,0.1)" }}>
-                <div className="h-48 overflow-hidden">
-                  <img src={GUIDES_IMG} alt={c.title} className="w-full h-full object-cover opacity-80" />
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {programs.map((p, i) => (
+              <div key={p.title} className={`rounded-2xl p-8 flex flex-col hover-lift cursor-pointer ${i === 1 ? "lg:scale-105 lg:-mt-4 lg:mb-4" : ""}`} style={{ backgroundColor: i === 1 ? "var(--sage-dark)" : "white", border: i === 1 ? "none" : "1px solid rgba(90,135,90,0.1)", boxShadow: i === 1 ? "0 20px 60px rgba(58,85,58,0.22)" : undefined }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: i === 1 ? "rgba(255,255,255,0.12)" : "rgba(168,195,168,0.22)" }}>
+                  <Icon name={p.icon} size={26} style={{ color: i === 1 ? "white" : "var(--sage)" } as React.CSSProperties} />
                 </div>
-                <div className="p-7">
-                  <div className="flex gap-3 mb-4">
-                    <span className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: i === 1 ? "rgba(255,255,255,0.12)" : "rgba(168,195,168,0.25)", color: i === 1 ? "rgba(255,255,255,0.8)" : "var(--sage-dark)" }}>
-                      {c.duration}
-                    </span>
-                    <span className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: i === 1 ? "rgba(255,255,255,0.12)" : "rgba(168,195,168,0.25)", color: i === 1 ? "rgba(255,255,255,0.8)" : "var(--sage-dark)" }}>
-                      {c.lessons} уроков
-                    </span>
-                  </div>
-                  <h3 className="font-cormorant text-2xl font-semibold mb-2 leading-snug" style={{ color: i === 1 ? "white" : "var(--warm-dark)" }}>{c.title}</h3>
-                  <p className="text-sm font-golos leading-relaxed mb-6" style={{ color: i === 1 ? "rgba(255,255,255,0.65)" : "#7a8a72" }}>{c.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="font-cormorant text-3xl font-semibold" style={{ color: i === 1 ? "white" : "var(--sage-dark)" }}>{c.price}</span>
-                    <button className="px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105" style={{ backgroundColor: i === 1 ? "white" : "var(--sage)", color: i === 1 ? "var(--sage-dark)" : "var(--cream)" }}>
-                      Записаться
-                    </button>
-                  </div>
+                <div className="mb-3">
+                  <span className="text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: i === 1 ? "rgba(255,255,255,0.12)" : "rgba(168,195,168,0.25)", color: i === 1 ? "rgba(255,255,255,0.75)" : "var(--sage-dark)" }}>
+                    {p.duration}
+                  </span>
+                </div>
+                <h3 className="font-cormorant text-3xl font-semibold mb-3 leading-snug" style={{ color: i === 1 ? "white" : "var(--warm-dark)" }}>{p.title}</h3>
+                <p className="text-sm font-golos leading-relaxed flex-1 mb-8" style={{ color: i === 1 ? "rgba(255,255,255,0.62)" : "#7a8a72" }}>{p.desc}</p>
+                <div className="flex items-center justify-between mt-auto">
+                  <span className="font-cormorant text-4xl font-semibold" style={{ color: i === 1 ? "white" : "var(--sage-dark)" }}>{p.price}</span>
+                  <button className="px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105" style={{ backgroundColor: i === 1 ? "white" : "var(--sage)", color: i === 1 ? "var(--sage-dark)" : "var(--cream)" }}>
+                    Купить
+                  </button>
                 </div>
               </div>
             ))}
