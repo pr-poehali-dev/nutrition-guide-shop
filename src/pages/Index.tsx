@@ -408,14 +408,18 @@ export default function Index() {
           <p className="font-golos text-base leading-relaxed max-w-md mx-auto mb-10" style={{ color: "rgba(250,246,238,0.65)" }}>
             Напишите — расскажем о подходящих курсах и проведём первую бесплатную консультацию.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-            <a href="https://t.me/nutritionist" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-golos font-medium text-sm transition-all hover:scale-105" style={{ backgroundColor: "var(--cream)", color: "var(--sage-dark)" }}>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-14">
+            <a href="https://t.me/Anastasia_m8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-golos font-medium text-sm transition-all hover:scale-105" style={{ backgroundColor: "var(--cream)", color: "var(--sage-dark)" }}>
               <Icon name="Send" size={18} />
-              Написать в Telegram
+              Telegram
             </a>
-            <a href="https://instagram.com/nutritionist" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-golos font-medium text-sm transition-all hover:scale-105 border" style={{ borderColor: "rgba(250,246,238,0.3)", color: "var(--cream)" }}>
-              <Icon name="Instagram" size={18} />
-              Instagram
+            <a href="https://vk.ru/club236767115" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-golos font-medium text-sm transition-all hover:scale-105 border" style={{ borderColor: "rgba(250,246,238,0.3)", color: "var(--cream)" }}>
+              <Icon name="Users" size={18} />
+              ВКонтакте
+            </a>
+            <a href="mailto:anastasiya.melnikova.2012@inbox.ru" className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-golos font-medium text-sm transition-all hover:scale-105 border" style={{ borderColor: "rgba(250,246,238,0.3)", color: "var(--cream)" }}>
+              <Icon name="Mail" size={18} />
+              anastasiya.melnikova.2012@inbox.ru
             </a>
           </div>
           <div className="pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(250,246,238,0.12)" }}>
