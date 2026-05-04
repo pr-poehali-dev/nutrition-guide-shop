@@ -171,17 +171,7 @@ export default function Index() {
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl" style={{ boxShadow: "0 30px 80px rgba(58,85,58,0.18)" }}>
               <img src={SPECIALIST_IMG} alt="Мельникова Анастасия — бьюти нутрициолог" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-6 -left-6 p-5 rounded-2xl shadow-xl backdrop-blur-sm" style={{ backgroundColor: "rgba(250,246,238,0.95)", border: "1px solid rgba(90,135,90,0.15)" }}>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--sage-light)", color: "white" }}>
-                  <Icon name="Leaf" size={18} />
-                </div>
-                <div>
-                  <div className="text-xs font-golos font-medium" style={{ color: "var(--warm-dark)" }}>Натуральный подход</div>
-                  <div className="text-xs" style={{ color: "#7a8a72" }}>без таблеток и БАДов</div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
