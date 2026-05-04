@@ -28,6 +28,12 @@ const programs = [
   { title: "Буст энергии", desc: "Избавьтесь от хронической усталости и упадка сил. Программа восстанавливает ресурс тела через еду, режим и нутриенты.", price: "3 099 ₽", duration: "6 недель", icon: "Zap" },
 ];
 
+const consultations = [
+  { title: "Общая консультация", desc: "30-минутный разбор вашего питания и образа жизни. В конце получаете файл с персональными рекомендациями.", price: "3 000 ₽", duration: "30 минут", icon: "MessageCircle", features: ["Разбор текущего рациона", "Файл рекомендаций"] },
+  { title: "Расширенная консультация", desc: "Углублённый анализ с детальным планом питания. Файл с персональными рекомендациями, составленный под вас.", price: "6 000 ₽", duration: "Расширенный формат", icon: "ClipboardList", features: ["Детальный анализ рациона", "Персональный план питания", "Файл рекомендаций"] },
+  { title: "Сопровождение", desc: "Полтора месяца работы вместе — с обратной связью каждые три дня. Максимальный результат под постоянным контролем.", price: "30 000 ₽", duration: "1,5 месяца", icon: "HeartHandshake", features: ["Обратная связь каждые 3 дня", "Корректировка плана", "Полное сопровождение"] },
+];
+
 const reviews = [
   { name: "Мария К.", text: "За 3 месяца работы с Анастасией я похудела на 9 кг без чувства голода. Наконец-то понимаю, как правильно питаться!", result: "−9 кг" },
   { name: "Алина В.", text: "Курс «Женское здоровье» изменил моё отношение к телу. Циклические отёки ушли, энергия появилась.", result: "−отёки" },
@@ -275,6 +281,46 @@ export default function Index() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* CONSULTATIONS */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <span className="text-xs tracking-[0.25em] uppercase font-medium mb-4 block" style={{ color: "var(--sage)" }}>Консультации</span>
+              <h2 className="font-cormorant text-5xl md:text-6xl font-light" style={{ color: "var(--warm-dark)" }}>
+                Работа<br /><em className="italic">лично со мной</em>
+              </h2>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+              {consultations.map((c, i) => (
+                <div key={c.title} className={`rounded-2xl p-8 flex flex-col hover-lift cursor-pointer ${i === 2 ? "lg:col-span-1" : ""}`} style={{ backgroundColor: i === 2 ? "var(--warm-dark)" : "white", border: i === 2 ? "none" : "1px solid rgba(90,135,90,0.1)", boxShadow: i === 2 ? "0 20px 60px rgba(44,53,40,0.25)" : undefined }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: i === 2 ? "rgba(255,255,255,0.08)" : "rgba(168,195,168,0.22)" }}>
+                    <Icon name={c.icon} size={26} style={{ color: i === 2 ? "rgba(255,255,255,0.8)" : "var(--sage)" } as React.CSSProperties} />
+                  </div>
+                  <div className="mb-3">
+                    <span className="text-xs px-3 py-1 rounded-full font-medium" style={{ backgroundColor: i === 2 ? "rgba(255,255,255,0.1)" : "rgba(168,195,168,0.25)", color: i === 2 ? "rgba(255,255,255,0.7)" : "var(--sage-dark)" }}>
+                      {c.duration}
+                    </span>
+                  </div>
+                  <h3 className="font-cormorant text-3xl font-semibold mb-3 leading-snug" style={{ color: i === 2 ? "white" : "var(--warm-dark)" }}>{c.title}</h3>
+                  <p className="text-sm font-golos leading-relaxed mb-5" style={{ color: i === 2 ? "rgba(255,255,255,0.6)" : "#7a8a72" }}>{c.desc}</p>
+                  <ul className="flex flex-col gap-2 flex-1 mb-8">
+                    {c.features.map(f => (
+                      <li key={f} className="flex items-center gap-2 text-xs font-golos" style={{ color: i === 2 ? "rgba(255,255,255,0.55)" : "#7a8a72" }}>
+                        <Icon name="Check" size={14} style={{ color: i === 2 ? "rgba(168,195,168,0.9)" : "var(--sage)" } as React.CSSProperties} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="font-cormorant text-4xl font-semibold" style={{ color: i === 2 ? "white" : "var(--sage-dark)" }}>{c.price}</span>
+                    <button className="px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105" style={{ backgroundColor: i === 2 ? "white" : "var(--sage)", color: i === 2 ? "var(--warm-dark)" : "var(--cream)" }}>
+                      Записаться
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
