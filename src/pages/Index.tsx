@@ -29,10 +29,10 @@ const courses = [
 ];
 
 const reviews = [
-  { name: "Мария К.", text: "За 3 месяца работы с Анной я похудела на 9 кг без чувства голода. Наконец-то понимаю, как правильно питаться!", result: "−9 кг" },
+  { name: "Мария К.", text: "За 3 месяца работы с Анастасией я похудела на 9 кг без чувства голода. Наконец-то понимаю, как правильно питаться!", result: "−9 кг" },
   { name: "Алина В.", text: "Курс «Женское здоровье» изменил моё отношение к телу. Циклические отёки ушли, энергия появилась.", result: "−отёки" },
   { name: "Екатерина М.", text: "Гайд по детоксу — лучшее вложение. Лёгкость, чистая кожа и наконец нормальный сон.", result: "Кожа светится" },
-  { name: "Наталья Р.", text: "Анна даёт знания, которые реально работают. Никакой воды, только практика.", result: "−6 кг" },
+  { name: "Наталья Р.", text: "Анастасия даёт знания, которые реально работают. Никакой воды, только практика.", result: "−6 кг" },
 ];
 
 const blogPosts = [
@@ -108,7 +108,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-sage-200/40" style={{ backgroundColor: "rgba(250,246,238,0.92)" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
           <a href="#" className="font-cormorant text-xl font-semibold tracking-wide" style={{ color: "var(--sage-dark)" }}>
-            Анна Соколова
+            Концепция молодости
           </a>
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map(l => (
@@ -143,7 +143,7 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
           <div className="animate-fade-in animate-opacity-0" style={{ animationFillMode: "forwards" }}>
             <span className="inline-block text-xs tracking-[0.25em] uppercase mb-6 font-golos font-medium" style={{ color: "var(--sage)" }}>
-              Нутрициолог · Диетолог
+              Бьюти нутрициолог
             </span>
             <h1 className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] mb-8" style={{ color: "var(--warm-dark)" }}>
               Питание,<br />
@@ -174,7 +174,7 @@ export default function Index() {
 
           <div className="relative animate-fade-in animate-opacity-0 animate-delay-300" style={{ animationFillMode: "forwards" }}>
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl" style={{ boxShadow: "0 30px 80px rgba(58,85,58,0.18)" }}>
-              <img src={SPECIALIST_IMG} alt="Анна Соколова — нутрициолог" className="w-full h-full object-cover" />
+              <img src={SPECIALIST_IMG} alt="Мельникова Анастасия — бьюти нутрициолог" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 p-5 rounded-2xl shadow-xl backdrop-blur-sm" style={{ backgroundColor: "rgba(250,246,238,0.95)", border: "1px solid rgba(90,135,90,0.15)" }}>
               <div className="flex items-center gap-3">
@@ -203,13 +203,13 @@ export default function Index() {
           <div className="order-1 lg:order-2">
             <span className="text-xs tracking-[0.25em] uppercase font-medium mb-4 block" style={{ color: "var(--sage)" }}>О специалисте</span>
             <h2 className="font-cormorant text-5xl md:text-6xl font-light mb-6 leading-tight" style={{ color: "var(--warm-dark)" }}>
-              Анна<br /><em className="italic">Соколова</em>
+              Анастасия<br /><em className="italic">Мельникова</em>
             </h2>
             <p className="font-golos text-base leading-relaxed mb-5" style={{ color: "#5a6b52" }}>
-              Сертифицированный нутрициолог с дипломом по диетологии. 5 лет помогаю людям выстраивать питание, которое приносит радость и результат.
+              Бьюти нутрициолог, основатель проекта «Концепция молодости». Помогаю женщинам выглядеть и чувствовать себя молодо через осознанное питание.
             </p>
             <p className="font-golos text-base leading-relaxed mb-8" style={{ color: "#5a6b52" }}>
-              Убеждена: еда — это не враг. Моя задача — научить вас слышать тело, понимать нутриенты и наконец перестать считать каждую калорию вручную.
+              Убеждена: красота начинается с тарелки. Моя задача — научить вас кормить тело так, чтобы кожа сияла, энергия не заканчивалась, а возраст оставался просто цифрой.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {["Нутрициология РУДН", "Психология пищевого поведения", "Функциональное питание", "ДНК-нутрициология"].map(cert => (
@@ -467,7 +467,7 @@ export default function Index() {
             </a>
           </div>
           <div className="pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderColor: "rgba(250,246,238,0.12)" }}>
-            <span className="font-cormorant text-lg font-light" style={{ color: "rgba(250,246,238,0.5)" }}>Анна Соколова — нутрициолог</span>
+            <span className="font-cormorant text-lg font-light" style={{ color: "rgba(250,246,238,0.5)" }}>Концепция молодости · Мельникова Анастасия</span>
             <span className="text-xs font-golos" style={{ color: "rgba(250,246,238,0.3)" }}>© 2025 · Все права защищены</span>
           </div>
         </div>
