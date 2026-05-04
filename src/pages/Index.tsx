@@ -11,7 +11,7 @@ const navLinks = [
   { href: "#courses", label: "Программы" },
   { href: "#calculator", label: "Калькулятор" },
   { href: "#reviews", label: "Отзывы" },
-  { href: "#blog", label: "Блог" },
+
   { href: "#contacts", label: "Контакты" },
 ];
 
@@ -35,12 +35,7 @@ const reviews = [
   { name: "Наталья Р.", text: "Анастасия даёт знания, которые реально работают. Никакой воды, только практика.", result: "−6 кг" },
 ];
 
-const blogPosts = [
-  { date: "28 апр 2025", title: "Почему вы едите правильно, но не худеете", tag: "Питание" },
-  { date: "15 апр 2025", title: "5 продуктов, которые снижают кортизол", tag: "Гормоны" },
-  { date: "3 апр 2025", title: "Интервальное голодание: кому подходит, а кому нет", tag: "Разбор" },
-  { date: "20 мар 2025", title: "Как читать этикетки на продуктах", tag: "Лайфхак" },
-];
+
 
 type Gender = "male" | "female";
 type Activity = "sedentary" | "light" | "moderate" | "active" | "veryActive";
@@ -410,37 +405,6 @@ export default function Index() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* BLOG */}
-      <section id="blog" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-          <div>
-            <span className="text-xs tracking-[0.25em] uppercase font-medium mb-4 block" style={{ color: "var(--sage)" }}>Блог</span>
-            <h2 className="font-cormorant text-5xl md:text-6xl font-light" style={{ color: "var(--warm-dark)" }}>
-              Статьи<br /><em className="italic">и разборы</em>
-            </h2>
-          </div>
-          <a href="#" className="inline-flex items-center gap-2 text-sm font-golos font-medium pb-1 transition-colors" style={{ color: "var(--sage-dark)", borderBottom: "1px solid var(--sage-light)" }}>
-            Все статьи <Icon name="ArrowRight" size={16} />
-          </a>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {blogPosts.map(post => (
-            <div key={post.title} className="group cursor-pointer p-6 rounded-2xl hover-lift" style={{ backgroundColor: "white", border: "1px solid rgba(90,135,90,0.1)" }}>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(168,195,168,0.25)", color: "var(--sage-dark)" }}>{post.tag}</span>
-                <span className="text-xs font-golos" style={{ color: "#a0b090" }}>{post.date}</span>
-              </div>
-              <h3 className="font-cormorant text-xl font-semibold leading-snug mb-4" style={{ color: "var(--warm-dark)" }}>
-                {post.title}
-              </h3>
-              <div className="flex items-center gap-1 text-xs font-golos font-medium" style={{ color: "var(--sage)" }}>
-                Читать <Icon name="ArrowRight" size={12} />
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
